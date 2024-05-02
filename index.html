@@ -1,0 +1,1373 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <link rel="apple-touch-icon" sizes="180x180" href="./favicon_io Mocks-Icon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="./favicon_io Mocks-Icon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="./favicon_io Mocks-Icon/favicon-16x16.png">
+    <link rel="icon" type="image/png" href="./favicon_io Mocks-Icon/favicon.ico">
+    <!-- <link rel="manifest" href="/site.webmanifest"> -->
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IQ-Boost Mock Interview</title>
+    <link rel="stylesheet" href="./main.css">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css" rel="stylesheet" />
+    <link rel="stylesheet" href="./GT-Walsheim-Pro/stylesheet.css">
+</head>
+
+<body class="bg-[#fffbf3] text-[#0b1331]">
+    <div id="topbar"></div>
+
+    <!-- below navbar for navigation page   -->
+
+    <nav id="navbar"
+        class="navbar  bg-white w-full border-b border-b-[#ececec] shadow-sm py-4 z-20 fixed left-0 right-0 top-0 flex justify-center items-center text-center ">
+        <div class="navbar_wrapper py-0 px-4 flex  justify-between items-center   w-11/12">
+            <div class="flex space-x-2 ">
+                <img src="./images/onlyIcon.png" alt="IQ_Boost_Icon" class="logo h-[48px] rounded-lg text-[#0009] ">
+                <div class="font-medium">
+                    <p>IQ-Boost Mock </p>
+                    <p>INTERVIEW</p>
+                </div>
+            </div>
+            <div class=" w-4/5 h-full flex justify-between">
+                <ul class="flex w-3/5 justify-between items-center nav-ul ">
+                    <li><a href="#" onclick="openHomePage()">Home</a></li>
+                    <li><a href="#" onclick="openWhyUsPage()">Why Us?</a></li>
+                    <li><a href="#" onclick="openTestimonialsPage()">Testimonials</a></li>
+                    <li><a href="#" onclick="openExpertsPage()">Our Experts</a></li>
+                    <li><a href="#" onclick="openContactUsPage()">Contact Us</a></li>
+                </ul>
+                <!-- below <div> must be hidden now we use flex for displaying -->
+
+                <div class="relative bg-[#ffbb00] hidden justify-between items-center py-1 px-2 rounded-full space-x-5"
+                    id="user-profile">
+                    <div class="">
+                        <img src="images/ranjeet-half-photo.jpg" alt="user-image"
+                            class="rounded-full h-10 w-10 object-contain">
+                    </div>
+                    <div id="profile-icon">
+                        <i class="ri-menu-fill text-2xl " id="menu-icon" onclick="openCloseIcon()"></i>
+                        <i class="ri-close-fill text-2xl hidden" id="close-icon" onclick="openMenuIcon()"></i>
+                    </div>
+                    <div class="hidden absolute w-max bg-white shadow-xl  -right-0 top-16 rounded-xl" id="profile-menu">
+                        <div class="flex flex-col space-y-2 mb-4">
+                            <div class=" flex items-center justify-between py-2 px-4 rounded-t-xl space-x-2">
+                                <div><img src="images/ranjeet-half-photo.jpg"
+                                        class="w-20  h-20 object-contain rounded-full border" alt="user-image">
+                                </div>
+                                <div class="space-y-2 text-left">
+                                    <h2 id="changeFnameText" class="  text-lg w-max font-medium overflow-hidden">Ranjeet
+                                        Vishwakarma</h2>
+                                    <p id="changeEmailText" class="text-sm">rv23850@gmail.com.com</p>
+                                </div>
+                            </div>
+
+                            <button type="button"
+                                class=" mx-2 flex py-2 px-4 gap-3 items-center gap rounded-lg border-2 border-[#777e8e] hover:text-green-500 active:scale-95"
+                                onclick="openEditUserProfilePage()">
+                                <div><i class="ri-profile-line text-2xl text-[#01b600]"></i></div>
+                                <div>Edit profile</div>
+                            </button>
+                            <button type="button" id="signOutUser"
+                                class="mx-2 flex py-2 px-4 gap-3 items-center gap rounded-lg border-2 border-[#777e8e] hover:text-red-500 active:scale-95"
+                                onclick="signOutUser()">
+                                <div><i class="ri-logout-box-line text-2xl text-red-500 "></i></div>
+                                <div>Logout</div>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <!-- below <ul> must be flex now we use hidden for hidding -->
+                <div class="flex space-x-4" id="sign-in-sign-up">
+                    <button
+                        class=" px-10 py-2 bg-[#01b600] text-white text-lg text-[#0009] font-medium hover:bg-[#21a35d]   rounded-lg active:scale-95"
+                        type="button" onclick="openLoginPage()">Log in</button>
+                    <button
+                        class=" px-10  py-2  bg-[#ffbb00] text-white text-lg text-[#0009] font-medium hover:bg-[#ffac00]   rounded-lg active:scale-95"
+                        type="button" onclick="openSignupPage()">Sign up</button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- hidding the Home Page when you'll visite any other page's -->
+
+    <main class="" id="home">
+        <header class="py-20 mt-20 " id="header">
+            <div class="my-0 mx-auto py-0 px-5   w-[1220px] flex justify-between">
+                <div class="mt-3 w-[595px] h-[373px]">
+                    <span class=" py-3 live text-white font-semibold px-9  bg-[#ffbb00]  text-sm  ">Live |
+                        On-demand | Anywhere</span>
+                    <h1 class="mt-7 text-black font-semibold text-5xl">Virtual face-to-face <br> mock interviews with
+                        industry experts</h1>
+                    <div class="my-7 grid grid-cols-2 gap-2">
+                        <div>
+                            <p><i class="ri-check-fill"></i>Entry Level To Excecutive Level</p>
+                        </div>
+                        <div>
+                            <p><i class="ri-check-fill"></i>Multiple Industries Catered</p>
+                        </div>
+                        <div>
+                            <p><i class="ri-check-fill"></i>Vetted Interviewers</p>
+                        </div>
+                        <div>
+                            <p><i class="ri-check-fill"></i>Dedicated Interviewing Platform</p>
+                        </div>
+                    </div>
+                    <button
+                        class="w-44 h-[44px] bg-[#01b600] text-white text-lg text-[#0009] font-semibold hover:bg-[#21a35d]   rounded-lg  active:scale-95"
+                        type="button">Self Practice</button>
+                </div>
+                <div><img src="images/header_home.webp" alt=""></div>
+            </div>
+        </header>
+        <section class="py-20 ">
+            <div class="my-0 mx-auto py-0 px-5 w-full overflow-hidden ">
+                <div class=" animation space-x-5 flex whitespace-nowrap font-medium  ">
+                    <div>Stay Consistent and Motivated</div>
+                    <div>Boost your Interview Intelligence</div>
+                    <div>Cracking your Dream Job</div>
+                    <div>Switching to a new Domain</div>
+                    <div>Switching to a Product Base Company</div>
+                    <div>Overcomming Rejection in Interview</div>
+                    <div>Cracking on Campus Placement</div>
+                    <div>Getting Off-Campus Opportunities</div>
+                    <div>Getting your First Job</div>
+                    <div>Cracking MAANG Interview</div>
+                    <div>Growing your Current Role</div>
+                    <div>Responses and Questions Confidence</div>
+                </div>
+            </div>
+        </section>
+
+        <section class="py-20 flex bg-[#0B1331]">
+            <div class="my-0 mx-auto py-0 px-5   w-[1320px] flex justify-between ">
+                <div class="mt-3 w-[635px] "><img src="images/practice.webp" alt=""></div>
+                <div class="flex flex-col text-white w-[635px] justify-center">
+                    <h1 class="text-6xl font-semibold">Practice Interviews Simplified!</h1>
+                    <p class="mt-7 text-lg  leading-6">Instead of measuring your interview readiness with
+                        puzzles and
+                        problems or in front of a mirror, practice with mock interviews that simulate a real interview.
+                        Take
+                        mock interviews on your browser itself with highly accomplished professionals in your vertical.
+                    </p>
+                </div>
+            </div>
+
+        </section>
+        <section class="py-20 ">
+            <div class="my-0 mx-auto px-20 0 w-[1320px] flex flex-col items-center">
+                <span class=" py-3 live text-white font-semibold px-9 bg-[#ffbb00]  text-4xl  mb-5 ">How to Kickoff your
+                    Interview Prep?</span>
+                <p class="mb-16 text-lg text-[#0009]">IQ-Boost mock helps students and job seekers crack interviews &
+                    land their
+                    dream
+                    jobs!</p>
+                <div class="flex justify-between gap-4">
+                    <div class="w-80 flex flex-col ">
+                        <div class=" mt-1 h-24 border-l-2 ml-40 border-dashed bor absolute border-[#01b600]"></div>
+                        <div class="w-[1012px] border-b-2 border-dashed bor relative top-3 left-44 border-[#01b600]">
+                        </div>
+                        <div class="mb-16 text-center z-10">
+                            <span
+                                class="py-2 px-4 rounded-full bg-[#01b600]  text-white text-xl border-8 border-white shadow-lg text-[#0009]">1</span>
+                        </div>
+                        <div class="py-10 px-6 h-[380px] z-10 bg-white rounded-2xl shadow-lg  ">
+                            <div class="text-center"><img src="images/schedule.png" alt="" class="my-0 mx-auto">
+                                <h2 class=" mt-7 mb-5 text-2xl font-medium">Schedule a
+                                    <span class="text-[#ffbb00]">one-on-one </span>mock interview
+                                </h2>
+                            </div>
+                            <p class="text-[#0009]">Choose your experience level and share your interview focus areas in
+                                the form. Choose an available slot that fits your schedule and you're good to go!
+                            </p>
+                        </div>
+                    </div>
+                    <div class="w-80    flex flex-col">
+                        <div class=" mt-1 h-24 border-l-2 ml-40 border-dashed bor absolute border-[#01b600]"></div>
+                        <div class="mb-16 text-center z-10"><span
+                                class="py-2 px-4 rounded-full bg-[#01b600]  text-white text-xl border-8 border-white shadow-lg text-[#0009] ">2</span>
+                        </div>
+                        <div class="py-10 px-6  h-[380px] z-10 bg-white rounded-2xl shadow-lg ">
+                            <div class="text-center"><img src="images/attend.png" alt="" class="my-0 mx-auto">
+                                <h2 class=" mt-7 mb-5 text-2xl font-medium">Attend
+                                    the mock
+                                    interview
+                                </h2>
+                            </div>
+                            <p class="text-[#0009]">Join the mock interview through the interview invite sent to you via
+                                email and wow the
+                                interviewer!
+                            </p>
+                        </div>
+                    </div>
+                    <div class="w-80    flex flex-col">
+                        <div class=" mt-1 h-24 border-l-2 ml-40 border-dashed bor absolute border-[#01b600]"></div>
+                        <div class="mb-16 text-center z-10"><span
+                                class="py-2 px-4 rounded-full bg-[#01b600]  text-white text-xl border-8 border-white shadow-lg text-[#0009]">3</span>
+                        </div>
+                        <div class="py-10 px-6  h-[380px] z-10 bg-white rounded-2xl shadow-lg ">
+                            <div class="text-center"><img src="images/perform.png" alt="" class="my-0 mx-auto">
+                                <h2 class=" mt-7 mb-5 text-2xl font-medium">Get
+                                    Performance
+                                    Feedback
+                                </h2>
+                            </div>
+                            <p class="text-[#0009]">Get all your doubts clarified and get a detailed analysis of your
+                                performance with
+                                actionable, insider insights and personalized tips to improve upon your weak areas.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="w-80 flex flex-col">
+                        <div class=" my-1 h-24 border-l-2 ml-40 border-dashed bor absolute border-[#01b600]"></div>
+                        <div class="mb-16 text-center z-10"><span
+                                class="py-2 px-4 rounded-full bg-[#01b600]  text-white text-xl border-8 border-white shadow-lg text-[#0009]">4</span>
+                        </div>
+                        <div class="py-10 px-6  h-[380px] z-10 w-full bg-white rounded-2xl shadow-lg ">
+                            <div class="text-center"><img src="images/standout.png" alt="" class="my-0 mx-auto">
+                                <h2 class=" mt-7 mb-5 text-2xl font-medium">Stand out from the competition
+                                </h2>
+                            </div>
+                            <p class="text-[#0009]">These interviews are similar in difficulty to actual live interviews
+                                and you will be able
+                                to
+                                see how you score in several key categories. Stand out among hundreds applying for the
+                                role
+                                just like you.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Below main section for Why Us? Page -->
+
+    <main class="main-Section-for-Why-Us_Page hidden" id="why-us">
+        <section class="py-20">
+            <div class="my-0 mx-auto py-0 px-5   w-[1220px] ">
+                <div class="flex justify-between">
+                    <div class="w-[530px]  py-auto px-0 flex flex-col justify-center">
+                        <h1 class="text-5xl font-semibold">Ridiculously Simple</h1>
+                        <div class="my-5 mx-0 text-lg text-[#0009]">
+                            <p>No downloads or redirects to a new website. Sign up, schedule, and take
+                                the interview on your browser itself.</p>
+                            <p>&nbsp;</p>
+                            <p>As all hirings are going remote. Equip yourself with a completely online mock interview
+                                experience. 💻</p>
+                        </div>
+                        <div class="flex">
+                            <button href="#"
+                                class="rounded-lg text-[#0009] py-2 px-10 text-white font-semibold text-lg  bg-[#ffbb00] flex space-x-3 active:scale-95 hover:bg-[#ffac00]"
+                                onclick="openBookInterviewPage()">
+                                <span>Book A Slot</span>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="w-[530px] py-auto px-0"><img src="images/header_whyus.png" alt=""></div>
+                </div>
+            </div>
+            <div class="my-0 mx-auto py-0 px-5   w-[1220px] ">
+                <div class="flex justify-between">
+                    <div class="w-[530px]  py-auto px-0"><img src="images/whyusrecruit.png" alt=""></div>
+                    <div class="w-[530px]  py-auto px-0 flex flex-col justify-center">
+                        <h1 class="text-4xl font-semibold">Learn the recruiters perspective</h1>
+                        <div class="my-5 mx-0 text-lg text-[#0009]">
+                            <p>Learn from our experienced expert's who are most likely recruiting managers in big
+                                companies,
+                                their perspective on the best candidate suitable for the job.</p>
+                            <p>&nbsp;</p>
+                            <p>Your candidature is seen through a real recruiters eyes and thus the feedback from these
+                                experts is authentic and actionable. 🔍</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="my-0 mx-auto py-0 px-5   w-[1220px] ">
+                <div class="flex justify-between">
+                    <div class="w-[530px]  py-auto px-0 flex flex-col justify-center">
+                        <h1 class="text-4xl font-semibold">Invest in yourself</h1>
+                        <div class="my-5 mx-0 text-lg text-[#0009]">
+                            <p>Take our affordable mock interviews. Understand how you performed from the detailed
+                                feedback.
+                            </p>
+                            <p>&nbsp;</p>
+                            <p>Imagine a scenario, where you are jobless for 6 months as you dont have any feedback to
+                                act
+                                on and learn from, to improve your interview performance. Taking a mock interview from
+                                IQ-Boost Mock Interview is at least 20x worth your investment. 🚀</p>
+                        </div>
+
+                    </div>
+                    <div class="w-[530px]  py-auto px-0"><img src="images/whyusinvest.png" alt=""></div>
+                </div>
+            </div>
+        </section>
+        <section class="py-10 bg-[#0B1331] text-white">
+            <div class="my-0 mx-auto py-0 px-5   w-[1220px] ">
+                <div class="flex justify-between">
+                    <div class="w-[530px]  py-auto px-0"><img src="images/whyusiskill.png" alt=""></div>
+                    <div class="w-[530px]  py-auto px-0 flex flex-col justify-center">
+                        <h1 class="text-4xl font-semibold">Flex your interviewing skills</h1>
+                        <div class="my-5 mx-0 text-lg text-[#ffffffe6]">
+                            <p>Our mock interview's give you the ability to beat your interview nerves and anxiety. We
+                                make sure you never ever walk into an interview unprepared.</p>
+                            <p>&nbsp;</p>
+                            <p>
+                                Your future self will look back to the mock-interview decision as a watershed moment in
+                                your career. 💪</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="my-0 mx-auto py-0 px-5   w-[1220px] ">
+                <div class="flex justify-between">
+                    <div class="w-[530px]  py-auto px-0 flex flex-col justify-center">
+                        <h1 class="text-4xl font-semibold">Practice Interview that's tailor-made for you
+                        </h1>
+                        <div class="my-5 mx-0 text-lg text-[#ffffffe6]">
+                            <p>Our practice interviews are structured, customized to the smallest detail for you. We
+                                understand your profile and objectives completely to assign the Industry expert and the
+                                same is shared with the expert to make the mock interview completely tailored to you.
+                            </p>
+                            <p>&nbsp;</p>
+                            <p>
+                                We simulate the pressure of a real interview for you without the pressure of a job on
+                                the line. 😇</p>
+                        </div>
+                    </div>
+                    <div class="w-[530px]  py-auto px-0"><img src="images/whyusmock.png" alt=""></div>
+                </div>
+            </div>
+        </section>
+
+        <section class="py-10">
+            <div class="my-0 mx-auto py-0 px-5   w-[1220px] ">
+                <div class="flex justify-between">
+                    <div class="w-[530px]  py-auto px-0"><img src="images/whyusfeed.png" alt=""></div>
+                    <div class="w-[530px]  py-auto px-0 flex flex-col justify-center">
+                        <h1 class="text-4xl font-semibold">Feedback that helps you grow</h1>
+                        <div class="my-5 mx-0 text-lg text-[#0009]">
+                            <p>Get actionable feedback from the experts after finishing your mock interview, unlike a
+                                real interview where you are kept in dark of your performance thus losing the
+                                opportunity to improve yourselves.</p>
+                            <p>&nbsp;</p>
+                            <p>The feedback is personally written based on your performance in the mock interview and is
+                                not derived from templates. 📋</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="my-0 mx-auto py-0 px-5   w-[1220px] ">
+                <div class="flex justify-between">
+                    <div class="w-[530px]  py-auto px-0 flex flex-col justify-center">
+                        <h1 class="text-4xl font-semibold">Industry experts who go over and above</h1>
+                        <div class="my-5 mx-0 text-lg text-[#0009]">
+                            <p>Our industry expert's are curated and handpicked by us through a carefully vetted
+                                process. Our industry experts have a median experience of 11+ years and are CEOs
+                                and top-level managers and engineers in some of the biggest companies in the world.
+                                🦸‍♀️️
+                            </p>
+                        </div>
+                    </div>
+                    <div class="w-[530px]  py-auto px-0"><img src="images/whyusexpert.png" alt=""></div>
+                </div>
+            </div>
+
+            <div class="my-0 mx-auto py-0 px-5   w-[1220px] ">
+                <div class="flex justify-between">
+                    <div class="w-[530px]  py-auto px-0"><img src="images/whyusfast.png" alt=""></div>
+                    <div class="w-[530px]  py-auto px-0 flex flex-col justify-center">
+                        <h1 class="text-4xl font-semibold">Get fast-tracked</h1>
+                        <div class="my-5 mx-0 text-lg text-[#0009]">
+                            <p>Have a chance to get fast-tracked in your actual interview process. If the interviewer
+                                happens to be a recruiter for a company, you can be offered a job in his/her company
+                                based on your performance. 🏃‍♂️</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="my-0 mx-auto py-0 px-5   w-[1220px] ">
+                <div class="flex justify-between">
+                    <div class="w-[530px]  py-auto px-0 flex flex-col justify-center">
+                        <h1 class="text-4xl font-semibold">Confidential and Anonymous</h1>
+                        <div class="my-5 mx-0 text-lg text-[#0009]">
+                            <p>We take your privacy very seriously. We don't share the data of users with experts or
+                                vice-versa more than what is required for the interview. All the interviews are kept
+                                end-to-end confidential. 🥷</p>
+                        </div>
+
+                    </div>
+                    <div class="w-[530px]  py-auto px-0"><img src="images/whyusconfi.png" alt=""></div>
+                </div>
+            </div>
+
+            <div class="my-0 mx-auto py-0 px-5   w-[1220px] ">
+
+            </div>
+            <div class="my-0 mx-auto py-0 px-5   w-[1220px] ">
+                <div class="flex justify-between">
+
+                    <div class="w-[530px]  py-auto px-0"><img src="images/whyusuni.png" alt=""></div>
+                    <div class="w-[530px]  py-auto px-0 flex flex-col justify-center">
+                        <h1 class="text-4xl font-semibold">IQ-Boost Mock Interview for Universities</h1>
+                        <div class="my-5 mx-0 text-lg text-[#0009]">
+                            <p>Partner with us and help us be the extra helping hands in your student placement process.
+                                We provide bulk interviewing solutions to help your students in their placement process.
+                            </p>
+                            <p>&nbsp;</p>
+                            <p>Partner with us and help us be a part of your students success. We provide bulk
+                                interviewing solutions to help your students in their placement process. 🏫</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="my-0 mx-auto py-0 px-5   w-[1220px] ">
+                <div class="flex justify-between">
+                    <div class="w-[530px]  py-auto px-0 flex flex-col justify-center">
+                        <h1 class="text-4xl font-semibold">IQ-Boost Mock Interview for business: IQ-Boost Mock Interview
+                            pro</h1>
+                        <div class="my-5 mx-0 text-lg text-[#0009]">
+                            <p>The complete on-demand interviewing infrastructure for your business.
+                            </p>
+                            <p>&nbsp;</p>
+                            <p>IQ-Boost Mock Interview is more than your typical interviewing platform. It is an end to
+                                end interviewing solution for all your business needs. Partner with us, get a
+                                white-labelled platform, and our extensive support to conduct interviews for your
+                                business needs. 🏢</p>
+                        </div>
+
+                    </div>
+                    <div class="w-[530px]  py-auto px-0"><img src="images/whyusexpert.png" alt=""></div>
+                </div>
+            </div>
+            <div class="my-0 mx-auto py-0 px-5   w-[1220px] ">
+                <div class="text-center mb-10">
+                    <h4 class="text-4xl font-semibold mb-5">Kickass Support</h4>
+
+
+                    <div class=" text-[#0009] text-lg">
+                        <p>Our support team is just a click away.</p>
+                        <p>We will be with you to guide you through your entire interviewing process. 👩‍💻
+                        </p>
+                    </div>
+                </div>
+                <div class="flex justify-between">
+                    <div class="w-[530px]  py-auto px-0 flex flex-col justify-center">
+                        <h1 class="text-4xl font-semibold">We come with experience</h1>
+                        <div class="my-5 mx-0 text-lg text-[#0009]">
+                            <p>We have a lot of experience organizing mock interviews. We organized many interviews for
+                                candidates across the world covering many domains and industries with domain-specific
+                                industry experts on IQ-Boost Mock Interview.
+                            </p>
+                            <p>&nbsp;</p>
+                            <p>Unlike a real interview where you are kept in dark of your performance losing the
+                                opportunity, with this Mock Interview you get a unique interview preparation service
+                                that allows you to practice and perfect interview skills in a realistic environment.
+                                practice your technical, managerial, and behavioral skills across different domains.
+                                Each mock interview has its own unique style and format so you can be prepared for
+                                anything. Boost your confidence and get your dream job! 🏅</p>
+                        </div>
+
+                    </div>
+                    <div class="w-[530px]  py-auto px-0"><img src="images/whyuskickass.png" alt=""></div>
+                </div>
+            </div>
+
+
+
+        </section>
+    </main>
+
+    <!-- Below section for Testimonials page -->
+
+    <main class="main-Section-for-Testimonials_Page hidden" id="testimonials">
+        <section class="py-16 mt-20 ">
+            <div class="my-0 mx-auto py-0 px-5   w-[1220px]  ">
+                <div class="flex justify-between">
+                    <div class="w-[530px] py-auto px-0"><img src="images/header_testimonials.png" alt=""></div>
+                    <div class="w-[530px]  py-auto px-0 flex flex-col justify-center">
+                        <h1 class="text-5xl font-semibold">Our customers are our biggest ambassadors</h1>
+                        <div class="my-5 mx-0 text-lg text-[#0009]">
+                            <p>99% of our growth is organic and through word of mouth. Hear what our customers have to
+                                say about us</p>
+                        </div>
+                        <div class="flex space-x-4">
+                            <button type="button" href="#"
+                                class="rounded-lg text-[#0009] py-2 px-10 text-white font-semibold text-lg  bg-[#01b600] flex space-x-3 active:scale-95 hover:bg-[#21a35b]"
+                                onclick="openWhyUsPage()">
+                                <span>Why Us?</span>
+                            </button>
+                            <button type="button" href="#"
+                                class="rounded-lg text-[#0009] py-2 px-10 text-white font-semibold text-lg  bg-[#ffbb00] flex space-x-3 active:scale-95 hover:bg-[#ffac00]"
+                                onclick="openBookInterviewPage()">
+                                <span>Book your Interview</span>
+                            </button>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+        <section class="py-20  ">
+            <div class="my-0 mx-auto py-0 px-5 w-[1360px]   text-[#0b1331]">
+                <div class="flex flex-wrap gap-[18px] ">
+                    <div class="shadow-lg rounded-xl border w-[427px] p-6 bg-white flex flex-col ">
+                        <div class="flex space-x-4">
+                            <img class="w-20 h-20 rounded-full border " src="images/sk-Bhai.jpg " alt="Sanoj kumar">
+                            <div class="my-auto mx-0">
+                                <h2 class="text-2xl font-semibold">Sanoj Kumar Jaiswar</h2>
+                                <h4 class="font-medium">FULL STACK DEVELOPER</h4>
+                            </div>
+                        </div>
+                        <div class="py-4">
+                            <ul class="text-[#ffbb00] text-xl space-x-1 flex">
+                                <li><i class="ri-star-fill"></i></li>
+                                <li><i class="ri-star-fill"></i></li>
+                                <li><i class="ri-star-fill"></i></li>
+                                <li><i class="ri-star-fill"></i></li>
+                                <li><i class="ri-star-fill"></i></li>
+                            </ul>
+                        </div>
+                        <p>I had a positive experience with IQ-Boost Mock Interview. The session was engaging and
+                            insightful, and
+                            I felt well-prepared for my interview after going through the process. The interviewer was
+                            professional and provided valuable feedback that helped me improve my interviewing skills.
+                        </p>
+                        <span class="mt-5 text-[#0009]">12 FEB, 2024</span>
+                    </div>
+                    <div class="shadow-lg rounded-xl border  w-[427px] p-6 bg-white flex flex-col ">
+                        <div class="flex space-x-4">
+                            <img class="w-20 h-20 rounded-full object-contain border" src="images/ranjeet.jpg"
+                                alt="ranjeet">
+                            <div class="my-auto mx-0">
+                                <h2 class="text-2xl font-semibold">Shyam Vishwakarma</h2>
+                                <h4 class="font-medium">EXECUTIVE ASSISTANT</h4>
+                            </div>
+                        </div>
+                        <div class="py-4">
+                            <ul class="text-[#ffbb00] text-xl space-x-1 flex">
+                                <li><i class="ri-star-fill"></i></li>
+                                <li><i class="ri-star-fill"></i></li>
+                                <li><i class="ri-star-fill"></i></li>
+                                <li><i class="ri-star-fill"></i></li>
+                                <li><i class="ri-star-fill"></i></li>
+                            </ul>
+                        </div>
+                        <p>
+                            Firstly I appreciate your efforts that go in behind the stage. Secondly, I had a very
+                            pleasant experience. As I opted for technical, I knew what kind of questions to expect but
+                            my panelist made me realize that variety would be the key to handling and so I believe it
+                            provided a lot of exposure and built confidence in me.
+                        <p> I would like to appreciate Abhay sir for the smoothness he offered throughout the interview.
+                        </p>
+                        </p>
+                        <span class="mt-5 flex items-end text-[#0009]">
+                            19 FEB, 2024</span>
+                    </div>
+                    <div class="shadow-lg rounded-xl border w-[427px] p-6 bg-white flex flex-col ">
+                        <div class="flex space-x-4">
+                            <img class="w-20 h-20 object-contain rounded-full border" src="images/anchal.jpg "
+                                alt="anchal">
+                            <div class="my-auto mx-0">
+                                <h2 class="text-2xl font-semibold">Anchal Prajapati</h2>
+                                <h4 class="font-medium">FRONTEND DEVELOPER</h4>
+                            </div>
+                        </div>
+                        <div class="py-4">
+                            <ul class="text-[#ffbb00] text-xl space-x-1 flex">
+                                <li><i class="ri-star-fill"></i></li>
+                                <li><i class="ri-star-fill"></i></li>
+                                <li><i class="ri-star-fill"></i></li>
+                                <li><i class="ri-star-fill"></i></li>
+                                <li><i class="ri-star-fill"></i></li>
+                            </ul>
+                        </div>
+                        <p>I had an awesome practice interview. Thanks so much. I'm impressed by your service. I would
+                            like to give you 5 out of 5.
+                        </p>
+                        <span class="mt-5 text-[#0009]">3 MAR, 2024</span>
+                    </div>
+                    <div class="shadow-lg rounded-xl border w-[427px] p-6 bg-white flex flex-col ">
+                        <div class="flex space-x-4">
+                            <img class="w-20 h-20 rounded-full object-contain border" src="images/satyam.jpg "
+                                alt="Satyam">
+                            <div class="my-auto mx-0">
+                                <h2 class="text-2xl font-semibold">Satyam Pandey</h2>
+                                <h4 class="font-medium">DATA SCIENCE ENTHUSIASTIC</h4>
+                            </div>
+                        </div>
+                        <div class="py-4">
+                            <ul class="text-[#ffbb00] text-xl space-x-1 flex">
+                                <li><i class="ri-star-fill"></i></li>
+                                <li><i class="ri-star-fill"></i></li>
+                                <li><i class="ri-star-fill"></i></li>
+                                <li><i class="ri-star-fill"></i></li>
+                                <li><i class="ri-star-fill"></i></li>
+                            </ul>
+                        </div>
+                        <p>
+                            Its a great platform. Performing well in an interview is a function of not just knowing the
+                            content well . It also needs being able to quickly think the solution within limited span of
+                            time and also being able to put into words in a believable way ! All of this is not science,
+                            but more of an art. The platform helps us to be better in that.
+                        </p>
+                        <span class="mt-5 text-[#0009]">18 MAR, 2024</span>
+                    </div>
+                    <div class="shadow-lg rounded-xl border w-[427px] p-6 bg-white flex flex-col ">
+                        <div class="flex space-x-4">
+                            <img class="w-20 h-20 rounded-full border " src="images/aarti.jpg " alt="Aarti-image">
+                            <div class="my-auto mx-0">
+                                <h2 class="text-2xl font-semibold">Aarti Sharma</h2>
+                                <h4 class="font-medium">CHARTERED ACCOUNTANT ( CA ) ENTHUSIASTIC</h4>
+                            </div>
+                        </div>
+                        <div class="py-4">
+                            <ul class="text-[#ffbb00] text-xl space-x-1 flex">
+                                <li><i class="ri-star-fill"></i></li>
+                                <li><i class="ri-star-fill"></i></li>
+                                <li><i class="ri-star-fill"></i></li>
+                                <li><i class="ri-star-fill"></i></li>
+                                <li><i class="ri-star-fill"></i></li>
+                            </ul>
+                        </div>
+                        <p>I would like to express that my experience was excellent. Thank you so much for taking out
+                            time for my mock interview.
+                            This mock interview was of immense help to me as it led me to gain more confidence and
+                            guided me on how to improve my delivery for future interviews. The interviewer was engaging,
+                            invested, and genuinely keen on helping me improve, which meant a lot to me. Sir made me
+                            feel comfortable and confident.
+                        <p>Thank you once again.</p>
+                        </p>
+                        <span class="mt-5 text-[#0009]">4 APRIL, 2024</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Below  section for Meet to our Experts Page-->
+
+    <main class="main-section-for-Meet-to-Experts hidden" id="experts">
+        <section class="py-16  mt-20">
+            <div class="my-0 mx-auto py-0 px-5   w-[1220px]  ">
+                <div class="flex justify-between">
+                    <div class="w-[530px] py-auto px-0"><img src="images/header_experts.png" alt=""></div>
+                    <div class="w-[530px]  py-auto px-0 flex flex-col justify-center">
+                        <h1 class="text-5xl font-semibold">Connecting you
+                            with experts from the industry?</h1>
+                        <div class="my-5 mx-0 text-lg text-[#0009]">
+                            <p><span class="font-semibold">Our experts are our superstars!</span> Our experts are
+                                carefully vetted and handpicked by us. Our experts believe in our vision and most of
+                                them volunteered to be a part of our journey. We are happy to be the bridge that
+                                connects our users with industry experts like CXOs, top-level managers, who otherwise
+                                would be very difficult to access. Get actionable feedback and learn interview hacks
+                                from the experts.</p>
+                        </div>
+                        <div class="flex space-x-4">
+                            <button href="#"
+                                class="rounded-lg py-2 px-10 text-white font-semibold text-lg  bg-[#01b600] flex space-x-3 active:scale-95 hover:bg-[#21a35b]"
+                                onclick="openWhyUsPage()">
+                                <span>Why Us?</span>
+                            </button>
+                            <button href="#"
+                                class="rounded-lg py-2 px-10 text-white font-semibold text-lg  bg-[#febc00] flex space-x-3 active:scale-95 hover:bg-[#ffac00]">
+                                <span>Self Practice</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+        </section>
+
+        <section class="py-20 ">
+
+            <div class="my-0 mx-auto px-20 0 w-[1320px]  ">
+                <div class="flex flex-col items-center">
+                    <span class=" py-3 live text-white font-semibold px-9 bg-[#FFAC00]  text-4xl  mb-5 ">Our
+                        Experts</span>
+                    <p class=" text-lg text-[#0009]">We are a group of industry experts who are passionate about the
+                        industry.
+                    </p>
+                    <p class="mb-16 text-lg text-[#0009]">We are here to help you get the best out of your interview.
+                    </p>
+                </div>
+                <div class="flex justify-between flex-wrap ">
+                    <div class="flex flex-col items-center w-[300px]   ">
+                        <img src="images/Abhay-kumar.jpeg" class="w-24 rounded-full " alt="">
+                        <h3 class="pt-8 pb-5 text-2xl font-medium">Abhay Kumar</h3>
+                        <p class="text-center text-[#0009] text-lg">7 years of Technical and 4+ year of management
+                            experience,Founder and CEO of APIxLABs
+                        </p>
+                    </div>
+
+                    <div class="flex flex-col items-center w-[300px]  ">
+                        <img src="images/Sanjeet-kumar.jpeg" class="w-24 rounded-full " alt="">
+                        <h3 class="pt-8 pb-5 text-2xl text-center font-medium">Sanjeet Vishwakarma
+                        </h3>
+                        <p class="text-center text-[#0009] text-lg">8+ years of experience @ TCS and 2+ year of
+                            experience at
+                            Deloitte,PMP Trained PSM certified,BPS : Lean Six Sigma Green Belt_WBT Ceritified
+                        </p>
+                    </div>
+                    <div class="flex flex-col items-center w-[300px]  ">
+                        <img src="images/sonal-mam.jpeg" class="w-24 rounded-full " alt="">
+                        <h3 class="pt-8 pb-5 text-2xl font-medium">Sonal</h3>
+                        <p class="text-center text-[#0009] text-lg">6+ years of experience in Full-Stack Web Development
+                            UI/UX
+                            MERN MEAN
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Below  section for Contact Us Page-->
+
+    <main class="main-section-for-Contact-Us_page hidden" id="contact-us">
+        <section class="py-16 mt-20">
+            <div class="my-0 mx-auto py-0 px-5   w-[1220px]  ">
+                <div class="flex justify-between">
+                    <div class="w-[530px] py-auto px-0"><img src="images/header_contact.png" alt=""></div>
+                    <div class="w-[530px]  py-auto px-0 flex flex-col justify-center">
+                        <h1 class="text-5xl font-semibold">Have a question?</h1>
+                        <div class="my-5 mx-0 text-lg text-[#0009]">
+                            <p>Whether you're a Student, Candidate or simply want to learn more, you've come to the
+                                right place..</p>
+                        </div>
+                        <div class="flex space-x-4">
+                            <button type="button" href="#"
+                                class="rounded-lg text-[#0009] py-2 px-10 text-white font-semibold text-lg  bg-[#01b600] flex space-x-3 active:scale-95 hover:bg-[#21a35b]"
+                                onclick="openExpertsPage()">
+                                <span>Meet our Experts</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+        </section>
+        <section class="py-16 ">
+            <div class="my-0 mx-auto py-0 px-5 w-[1120px]  ">
+                <div class="flex justify-between">
+                    <div>
+                        <h2 class="text-3xl font-semibold">Please share your requirements <h2
+                                class="text-3xl font-semibold">in detail</h2>
+                        </h2>
+                        <div class="my-6 text-lg text-[#0009]">
+                            <p>Fill in the below form for any query or doubts</p>
+                            <p>We'll give response as soon as possible.</p>
+                        </div>
+                        <div action="#" class="space-y-2">
+                            <div>
+                                <input type="text" name="fullName" placeholder="Enter your full name" id=""
+                                    class=" py-3 px-5 rounded-full outline-none w-80 border-2 border-[#777e8e]"
+                                    maxlength="42">
+                            </div>
+                            <div><input type="text" name="" placeholder="Enter your designation" id="designation"
+                                    class=" py-3 px-5 rounded-full outline-none w-80 border-2 border-[#777e8e]"
+                                    maxlength="22"></div>
+                            <div><input type="text" name="" placeholder="Enter your company" id="companyName"
+                                    class=" py-3 px-5 rounded-full outline-none w-80 border-2 border-[#777e8e]"
+                                    maxlength="42"></div>
+                            <div><input type="email" name="" placeholder="Enter your email" id="email"
+                                    class=" py-3 px-5 rounded-full outline-none w-80 border-2 border-[#777e8e]"
+                                    maxlength="22"></div>
+                            <div><input type="tel" name="" placeholder="Enter your number" id="phoneNumber"
+                                    class=" py-3 px-5 rounded-full outline-none w-80 border-2 border-[#777e8e]"
+                                    maxlength="10"></div>
+                            <div>
+                                <textarea placeholder="Please share your thought " id="textArea" cols="30" rows="5"
+                                    class=" py-3 px-5 rounded-xl outline-none w-80 border-2 border-[#777e8e] resize-none"></textarea>
+                            </div>
+                            <div>
+                                <button type="button" href="#" onclick="openNotificationPage()"
+                                    class="rounded-lg py-2 px-10 text-white font-semibold text-lg  bg-[#ffbb00] active:scale-95 hover:bg-[#ffac00] w-[320px]">
+                                    Submit
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="flex flex-col justify-center">
+                        <div class="mb-5 p-8  flex items-center space-x-4 bg-white rounded-md shadow-lg">
+                            <img src="images/candidates.png" alt="">
+                            <h4 class="text-lg">For Candidates</h4>
+                        </div>
+                        <div class="mb-5 p-8 flex items-center space-x-4 bg-white rounded-md shadow-lg">
+                            <img src="images/universities.png" alt="">
+                            <h4 class="text-lg">For Universities & Tech companies</h4>
+                        </div>
+                        <div class="mb-5 p-8  flex items-center space-x-4 bg-white rounded-md shadow-lg">
+                            <img src="images/corporate.png" alt="">
+                            <h4 class="text-lg">For Resellers & Partnerships</h4>
+                        </div>
+                    </div>
+                </div>
+        </section>
+    </main>
+
+    <!-- Below section for Sign in Page -->
+
+    <div class="hidden" id="signin">
+        <div class="bg-[#656b6e] opacity-80 top-0 left-0 z-30 fixed w-full h-full "></div>
+        <section
+            class=" fixed left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 bg-white z-40 shadow-2xl rounded-xl w-[500px] select-none">
+            <div class="text-right text-2xl mt-3 mr-3 ">
+                <a type="button" class="active:scale-95"
+                    onclick="document.getElementById('signin').style.display='none'"><i
+                        class="ri-close-fill bg-[#ececec] rounded-full hover:bg-[#ececdc] cursor-pointer  p-1 font-medium "></i></a>
+            </div>
+            <div class="pt-8 pb-16">
+                <div class="my-0 mx-auto py-0 px-8  flex flex-col space-y-4">
+                    <div class="mb-4">
+                        <img src="./images/onlyIcon.png" alt=""
+                            class="logo h-[48px] text-center rounded-lg mx-auto my-0 text-[#0009] ">
+                        <h2 class="text-center font-medium text-2xl my-2">Welcome back!</h2>
+                        <div class="leading-5">
+                            <p class="text-[#6B7280] text-center">Don't have account ? <button type="button"
+                                    onclick="openSignupPage()"
+                                    class="text-blue-500 text-sm font-medium underline active:scale-95">Sign up</button>
+                            </p>
+                        </div>
+                    </div>
+                    <form action="#" class="space-y-2 " autocomplete="on">
+                        <input type="email" name="" placeholder="Email Adress" id="sign-in-email"
+                            class="py-3 px-5 rounded-lg outline-none w-full border-2 border-[#777e8e]" maxlength="42">
+
+                        <div><input type="password" name="" placeholder="Password" id="signInPassword" minlength="8"
+                                class="  py-3 px-5 rounded-lg outline-none w-full border-2 border-[#777e8e]"
+                                maxlength="22">
+                            <i id="SigInTogglePassword"
+                                class=" ri-eye-off-line hover:cursor-pointer -ml-9 text-xl "></i>
+                        </div>
+                        <span id="Invalid_mail_or_password" class="hidden text-sm text-red-500 font-medium">Invalid
+                            Email or Password</span>
+                        <button href="#" id="hideLoginSignupButton"
+                            class="rounded-md py-2 px-10 text-white font-semibold text-lg  bg-[#ffbb00] active:scale-95 hover:bg-[#ffac00] w-full">
+                            <span>Sign in </span>
+                        </button>
+                        <div class="text-center">
+                            <button type="button" class="text-blue-500 font-medium underline active:scale-95 text-sm"
+                                onclick="openForgotPasswordPage()">Forgot
+                                your Password ?</button>
+                        </div>
+                </div>
+                </form>
+            </div>
+        </section>
+    </div>
+    <!-- Below div for Sign Up Page-->
+
+    <div class="hidden" id="signup">
+        <div class="bg-[#656b6e] opacity-80 z-30 top-0 left-0 fixed w-full h-full "></div>
+        <section
+            class=" fixed left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 bg-white z-40 shadow-2xl rounded-xl w-[500px] select-none">
+            <div class="text-right text-2xl mt-3 mr-3 "><a type="button" class="active:scale-95"
+                    onclick="document.getElementById('signup').style.display='none'"><i
+                        class="ri-close-fill bg-[#ececec] rounded-full hover:bg-[#ececdc] cursor-pointer  p-1 font-medium "></i></a>
+            </div>
+            <div class="pt-8 pb-16">
+                <div class="my-0 mx-auto py-0 px-8  flex flex-col space-y-4">
+                    <div class="mb-4">
+                        <img src="./images/onlyIcon.png" alt=""
+                            class="logo h-[48px] text-center rounded-lg mx-auto my-0 text-[#0009] ">
+                        <h2 class="text-center font-medium text-2xl my-2">Sign Up to get Started</h2>
+                        <div class="leading-5">
+                            <p class="text-[#6B7280] text-center">Tell me your destination and I'll take you there </p>
+                            <p class="text-[#6B7280] text-center">Begin your journey to your Dream job</p>
+                        </div>
+                    </div>
+                    <div class="">
+                        <form action="#" class="space-y-2 " autocomplete="on">
+                            <div>
+                                <input type="text" name="" placeholder="First name" id="firstName" title="First name"
+                                    class=" py-3 px-5 rounded-lg outline-none w-full border-2 border-[#777e8e]"
+                                    maxlength="25" required>
+                            </div>
+                            <div><input type="text" name="" placeholder="Last Name" id="lastName" title="Last Name"
+                                    class=" py-3 px-5 rounded-lg outline-none w-full border-2 border-[#777e8e]"
+                                    maxlength="25" required></div>
+                            <div><input type="email" pattern=".+@example\.com" name="" placeholder="Email Adress" id="emailAddress"
+                                    class=" py-3 px-5 rounded-lg outline-none w-full border-2 border-[#777e8e]"
+                                    maxlength="42"></div>
+                            <div>
+                                <input type="password" name=""   placeholder="Create Password" id="create_password" minlength="8"
+                                    title="Create Password"
+                                    class="password  py-3 px-5 rounded-lg outline-none w-full border-2 border-[#777e8e]"
+                                   maxlength="25" required>
+                                <i id="createTogglePassword"
+                                    class="hover:cursor-pointer -ml-9 text-xl ri-eye-off-line "></i>
+                                <!-- <i class="ri-eye-off-line ri-eye-line"><i> -->
+                            </div>
+                            <div>
+                                <input type="password" placeholder="Confirm Password" id="confirm_password" minlength="8" 
+                                    title="Confirm Password"
+                                    class="password  py-3 px-5 rounded-lg outline-none w-full border-2 border-[#777e8e]"
+                                    maxlength="25" required>
+                                <i id="confirmTogglePassword"
+                                    class="togglePassword ri-eye-off-line hover:cursor-pointer -ml-9 text-xl "></i>
+                            </div>
+
+                            <div>
+                                <input type="tel" name="" placeholder="Phone number" value="+91" id="number"
+                                    title="Phone number"
+                                    class=" py-3 px-5 rounded-lg outline-none w-full border-2 border-[#777e8e]"
+                                    maxlength="13" minlength="13" required>
+                            </div>
+                            <div id="recaptcha-container"></div>
+                            <span id="error_during_sign_up" class=" text-sm text-red-500 hidden">Please fill all the
+                                above details</span>
+                            <span id="error_during_password_matching" class=" text-sm text-red-500 hidden">Password
+                                doesn't match Or Password's length is less than 8 </span>
+                            <span id="invalid_mobile_number" class=" text-sm text-red-500 hidden">Invalid Mobile
+                                Number</span>
+                            <div>
+                                <button type="button" id="StoreSignUpData"
+                                    class="rounded-md py-2 px-10 text-white font-semibold text-lg  bg-[#ffbb00] active:scale-95 hover:bg-[#ffac00] w-full">
+                                    <span>Get OTP </span>
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+        </section>
+    </div>
+    <!-- below div for OTP Confirmation -->
+
+    <div class="hidden" id="signup-get-otp">
+        <div class="bg-[#656b6e] opacity-80 z-30 top-0 left-0 fixed w-full h-full "></div>
+        <section
+            class=" fixed left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 bg-white z-40 shadow-2xl rounded-xl w-[500px] select-none">
+            <div class="text-right text-2xl mt-3 mr-3 "><a type="button" class="active:scale-95"
+                    onclick="document.getElementById('signup-get-otp').style.display='none'"><i
+                        class="ri-close-fill bg-[#ececec] rounded-full hover:bg-[#ececdc] cursor-pointer  p-1 font-medium "></i></a>
+            </div>
+            <div class="pt-8 pb-16">
+                <div class="my-0 mx-auto py-0 px-8  flex flex-col space-y-4">
+                    <div class="mb-4">
+                        <img src="./images/onlyIcon.png" alt=""
+                            class="logo h-[48px] text-center rounded-lg mx-auto my-0 text-[#0009] ">
+                        <h2 class="text-center font-medium text-2xl my-2">Verify phone number</h2>
+                        <div class="leading-5">
+                            <p class="text-[#6B7280] text-center">We have sent a verification OTP to <span> +91</span>
+                                <button type="button" class="underline text-blue-400 font-medium active:scale-95"
+                                    onclick="openSignupPage()">Edit</button>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="space-y-2">
+                        <div class="input-field flex space-x-4 m-8">
+                            <input type="text" name="" id="first-digit-password"
+                                class="inputPassword w-full  bg-[#f5deb3] outline-[#777e8e] rounded-lg h-14 p-5">
+                            <input type="text" name="" id="second-digit-password"
+                                class=" inputPassword w-full  bg-[#f5deb3] rounded-lg h-14 p-5 outline-[#777e8e]"
+                                disabled>
+                            <input type="text" name="" id="third-digit-password"
+                                class=" inputPassword w-full  bg-[#f5deb3]  rounded-lg h-14 p-5 outline-[#777e8e]"
+                                disabled>
+                            <input type="text" name="" id="fourth-digit-password"
+                                class=" inputPassword w-full  bg-[#f5deb3] rounded-lg h-14 p-5 outline-[#777e8e]"
+                                disabled>
+                            <input type="text" name="" id="fifth-digit-password"
+                                class=" inputPassword w-full  bg-[#f5deb3] rounded-lg h-14 p-5 outline-[#777e8e]"
+                                disabled>
+                            <input type="text" name="" id="six-digit-password"
+                                class=" inputPassword w-full  bg-[#f5deb3]  rounded-lg h-14 p-5 outline-[#777e8e]"
+                                disabled>
+                        </div>
+                        <span id="otp_invalid" class="hidden ml-5 text-red-500 font-sm">Invalid OTP</span>
+                        <button type="button" href="#" id="verifyOTPButton"
+                            class=" rounded-md py-2 px-10 text-white font-semibold text-lg   bg-[#01b600] active:scale-95 hover:bg-[#21a35d]  w-full">
+                            <span>Verify OTP</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Below section for forgot_password  Page -->
+
+    <div class="hidden" id="forgot-password">
+        <div class="bg-[#656b6e] opacity-80 z-30 top-0 left-0 fixed w-full h-full "></div>
+        <section
+            class=" fixed left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 bg-white z-40 shadow-2xl rounded-xl w-[500px] select-none">
+            <div class="text-right text-2xl mt-3 mr-3 "><a type="button" class="active:scale-95"
+                    onclick="document.getElementById('forgot-password').style.display='none'"><i
+                        class="ri-close-fill bg-[#ececec] rounded-full hover:bg-[#ececdc] cursor-pointer  p-1 font-medium "></i></a>
+            </div>
+            <div class="pt-8 pb-16">
+                <div class="my-0 mx-auto py-0 px-8  flex flex-col space-y-4">
+                    <div class="mb-4">
+                        <img src="./images/onlyIcon.png" alt=""
+                            class="logo h-[48px] text-center rounded-lg mx-auto my-0 text-[#0009] ">
+                        <h2 class="text-center font-medium text-2xl my-2">Reset your Password</h2>
+                        <div class="leading-5">
+                            <p class="text-[#6B7280] text-center">No Worries ! Just enter your email below and We'll
+                                send your password </p>
+                        </div>
+                    </div>
+                    <div class="">
+                        <form action="#" class="space-y-2 " autocomplete="on">
+                            <input type="email" name="" placeholder="Email Adress" id="signin-email"
+                                class=" py-3 px-5 rounded-lg outline-none w-full border-2 border-[#777e8e]"
+                                maxlength="42">
+                            <span class="hidden text-sm text-red-500 font-medium">Invalid Email or Password</span>
+                            <button type="button" href="#"
+                                class="rounded-md py-2 px-10 text-white font-semibold text-lg  bg-[#01b600] active:scale-95 hover:bg-[#21a35d;] w-full"
+                                onclick="openNotificationPage()">
+                                <span>Recover password </span>
+                            </button>
+                            <div class="text-center pt-3">
+                                <button type="button"
+                                    class="text-blue-500 underline active:scale-95 text-sm font-medium"
+                                    onclick="openLoginPage()"> <i class="ri-arrow-left-double-line text-lg "></i>Back to
+                                    Login</button>
+                            </div>
+                        </form>
+                    </div>
+        </section>
+    </div>
+
+    <!-- Below section for Notification Page -->
+
+    <div class="hidden" id="notification-bar">
+        <div class="  bg-[#656b6e] opacity-80 z-30 top-0 left-0 fixed  w-full h-full "></div>
+        <section
+            class="apply_transition fixed left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 bg-white z-40 shadow-2xl rounded-xl w-[500px] select-none">
+            <div class="text-right text-2xl mt-3 mr-3 "><a type="button" class="active:scale-95"
+                    onclick="document.getElementById('notification-bar').style.display='none'"><i
+                        class="ri-close-fill bg-[#ececec] rounded-full hover:bg-[#ececdc] cursor-pointer  p-1 font-medium "></i></a>
+            </div>
+            <div class="pt-8 pb-16">
+                <div class="my-0 mx-auto py-0 px-8  flex flex-col space-y-4">
+                    <div class="mb-4">
+                        <h2 class="text-center font-medium text-3xl my-2">Notification</h2>
+                        <div class="text-[#6B7280] text-center text-xl my-8">
+                            <p>
+                                <!-- <i class="ri-check-line "></i> -->
+                                <i class="ri-checkbox-circle-fill text-2xl font-medium text-[#01b600] mr-1 "></i>Thank
+                                you! Our
+                                Team
+                                will be in touch
+                            </p>
+                            <p>sortly.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Below section for editing the user Profile -->
+
+    <div class="hidden" id="edit-user-profile">
+        <div class="bg-[#656b6e] opacity-80 z-30 top-0 left-0 fixed w-full h-full "></div>
+        <section
+            class=" fixed left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 bg-white z-40 shadow-2xl rounded-xl w-[500px] select-none max-h-max">
+            <div class="text-right text-2xl mt-3 mr-3 ">
+                <a type="button" class="active:scale-95"
+                    onclick="document.getElementById('edit-user-profile').style.display='none'">
+                    <i
+                        class="ri-close-fill bg-[#ececec] rounded-full hover:bg-[#ececdc] cursor-pointer  p-1 font-medium "></i>
+                </a>
+            </div>
+            <div class=" pb-8">
+                <div class="my-0 mx-auto py-0 px-8  flex flex-col space-y-4">
+                    <div class="mb-4">
+                        <img src="./images/onlyIcon.png" alt=""
+                            class="logo h-[48px] text-center rounded-lg mx-auto my-0 text-[#0009] ">
+                        <h2 class="text-center font-medium text-2xl my-2">Update your profile</h2>
+                        <div class="leading-5">
+                            <p class="text-[#6B7280] text-center">Everything you need to <i
+                                    class="ri-star-fill text-sm text-[#ffbb00]"></i>rank higher & get more Traffic <i
+                                    class="ri-team-fill text-xl text-[#01b600]"></i></p>
+                            <p class="text-[#6B7280] text-center">You must be the change you wish to see in the world.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="">
+                        <form action="#" class="space-y-2 " autocomplete="on">
+                            <div>
+                                <input type="text" name="" placeholder="First name" id="profile-first-name"
+                                    title="First name"
+                                    class=" py-3 px-5 rounded-lg outline-none w-full border-2 border-[#777e8e]"
+                                    maxlength="25" required>
+                            </div>
+                            <div><input type="text" name="" placeholder="Last Name" id="profile-last-name"
+                                    class=" py-3 px-5 rounded-lg outline-none w-full border-2 border-[#777e8e]"
+                                    maxlength="25" required></div>
+                            <div><input type="email" name="" placeholder="Email Adress" id="profile-email-address"
+                                    class=" py-3 px-5 rounded-lg outline-none w-full border-2 border-[#777e8e]"
+                                    maxlength="25" required>
+                            </div>
+                            <div>
+                                <input type="password" name="" placeholder="Current Password"
+                                    id="profile_current_password"
+                                    class="password  py-3 px-5 rounded-lg outline-none w-full border-2 border-[#777e8e]"
+                                    minlength="8" maxlength="25" required>
+                                <i id="profile_current_toggle_password"
+                                    class="ri-eye-off-line  hover:cursor-pointer  -ml-9 text-xl "></i>
+                                <!-- <i class="ri-eye-off-line"></i> -->
+                            </div>
+                            <div>
+                                <input type="password" name="" placeholder=" New Password" id="profile_new_password"
+                                    class="password  py-3 px-5 rounded-lg outline-none w-full border-2 border-[#777e8e]"
+                                    maxlength="25" minlength="8" required>
+                                <!-- <i id="profile_new_toggle_password"
+                                    class="togglePassword ri-eye-off-line hover:cursor-pointer  -ml-9 text-xl "></i> 
+                                -->
+                                <i id="profile_new_toggle_password"
+                                    class="ri-eye-off-line hover:cursor-pointer  -ml-9 text-xl"></i>
+                            </div>
+                            <div>
+                                <input type="tel" name="" placeholder="Phone number" value="+91"
+                                    id="profile-mobile-number" title="Phone number"
+                                    class=" py-3 px-5 rounded-lg outline-none w-full border-2 border-[#777e8e]  placeholder:"
+                                    maxlength="13" minlength="13">
+                            </div>
+                            <div>
+                                <label for="profile-pic" class="text-sm ">Profile Picture</label><input type="file"
+                                    name="" placeholder="Profile picture" id="profile-pic"
+                                    class=" py-3 px-5 rounded-lg outline-none w-full border-2 border-[#777e8e]"
+                                    required>
+                            </div>
+
+                            <div>
+                                <button type="button" href="#"
+                                    class="rounded-md py-2 px-10 text-white font-semibold text-lg  bg-[#01b600] active:scale-95 hover:bg-[#21a35d] w-full">
+                                    <span>Update Profile </span>
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+        </section>
+    </div>
+
+    <!-- Below section for Book-Interview Page -->
+
+
+    <main class="hidden" id="book-Interview">
+        <div class="py-20 mt-20 ">
+            <div class="my-0 mx-auto py-0 px-5   w-[1320px] flex justify-between ">
+                <div class=" w-[540px]">
+                    <span class=" py-4 live text-white font-semibold px-8  bg-[#ffbb00] text-sm  ">Maxmize your
+                        Efforts
+                    </span>
+                    <h1 class="mt-7 text-black font-semibold text-5xl">Sign up and
+                        schedule a mock with one of our plans
+                    </h1>
+                    <div class="my-7 ">
+                        <p>Our mock interviews come with a guaranteed refund, we're that confident. Invest a small
+                            amount in yourself today to get mentored and become awesome at interviewing to secure a job
+                            and grow in your career.</p>
+                    </div>
+                    <div class="flex space-x-4">
+                        <button
+                            class="w-44 h-[44px] bg-[#01b600] text-white text-lg text-[#0009] font-semibold hover:bg-[#21a35d]   rounded-lg  active:scale-95"
+                            type="button" onclick="openWhyUsPage()">Why Us?
+                        </button>
+                        <button
+                            class="w-44 h-[44px] bg-[#ffbb00] text-white text-lg text-[#0009] font-semibold hover:bg-[#ffac00]   rounded-lg  active:scale-95"
+                            type="button" onclick="openTestimonialsPage()">Testimonials
+                        </button>
+
+                    </div>
+                </div>
+                <div class="">
+                    <form action="#">
+                        <div class="grid grid-cols-2 gap-4" class="book-interview-now ">
+                            <div class="flex flex-col  ">
+                                <span class="text-xs font-semibold">TOTAL</span>
+                                <div class="text-4xl font-semibold ">₹
+                                    <span id="total-price">99</span>.00
+                                </div>
+                                <div class="font-medium line-through  opacity-60">₹ <span id="expected-price">149</span>
+                                    .00</div>
+                            </div>
+                            <div class="flex flex-col gap-1 space-y-1 justify-center ">
+                                <div class="text-xs font-semibold">SELECT EXPERIENCE </div>
+                                <div
+                                    class="select-experience flex justify-between gap-2 py-3 px-5 rounded-full outline-none w-72 border-2 border-[#777b8e]">
+                                    <a type="button" class="" id="decrementExperienceButton"
+                                        onclick="decrementExperience()"><i
+                                            class="ri-subtract-fill text-xl rounded-full p-2 bg-[#ececec] hover:bg-[#949cba] "></i>
+                                    </a>
+                                    <div class=" w-20 text-center">
+                                        <span id="select-experience">0</span> Years
+                                    </div>
+                                    <a type="button" class=" " id="incrementExperienceButton"
+                                        onclick=" incrementExperience()"><i
+                                            class="ri-add-fill text-xl rounded-full p-2 bg-[#ececec] hover:bg-[#949cba]"></i></a>
+                                </div>
+                            </div>
+                            <div class="flex flex-col gap-1 space-y-1">
+                                <div class="text-xs font-semibold">SELECT DURATION </div>
+                                <div
+                                    class="flex justify-between py-3 px-5 rounded-full outline-none w-72 border-2 border-[#777e8e]">
+                                    <a type="button" id="decrement-duration-button" onclick="decrementDuration()"><i
+                                            class="ri-subtract-fill text-xl rounded-full p-2 bg-[#ececec] hover:bg-[#949cba]"></i>
+                                    </a>
+                                    <div class="w-[130px] text-center">
+                                        <span id="select-duration">30</span> Minutes
+                                    </div>
+                                    <a type="button" id="increment-duration-button" onclick="incrementDuration()"><i
+                                            class="ri-add-fill text-xl rounded-full p-2 bg-[#ececec] hover:bg-[#949cba]"></i></a>
+                                </div>
+                            </div>
+                            <div class="mt-6 tooltip">
+                                <input type="text"
+                                    class=" py-3 px-5 rounded-full outline-none w-72 border-2 border-[#777e8e]" name=""
+                                    placeholder="Enter your vertical" maxlength="25" id="book_verical_name">
+                                <span class="tooltiptext text-xs">Specify the Areas/Targeted Role for which you want to
+                                    be interviewed by an expert, Example: Full-Stack Development, UI/UX Designer for
+                                    Google, Accounting, etc. You can also specify the particular of that vertical as
+                                    well.</span>
+
+
+                            </div>
+                            <div>
+                                <input type="text" maxlength="25" name="" placeholder="Enter full name"
+                                    id="book-full-name"
+                                    class=" py-3 px-5 rounded-full outline-none w-72 border-2 border-[#777e8e]">
+                            </div>
+                            <div><input type="email" placeholder=" Enter email address" maxlength="25" id="book_email"
+                                    class=" py-3 px-5 rounded-full outline-none w-72 border-2 border-[#777e8e]">
+                            </div>
+                            <div><input type="tel" name=""
+                                    class=" py-3 px-5 rounded-full outline-none w-72 border-2 border-[#777e8e]"
+                                    placeholder="Enter mobile number" maxlength="13" id="book_mobile_number"
+                                    value="+91">
+                            </div>
+                            <div><input type="text"
+                                    class=" py-3 px-5 rounded-full outline-none w-72 border-2 border-[#777e8e]"
+                                    id="book_target_company" placeholder="Target Company ( , seperated ) "></div>
+                        </div>
+
+                        <div class="mt-3"><button
+                                class="w-full h-[44px] bg-[#01b600] text-white text-lg text-[#0009] font-semibold hover:bg-[#21a35d]   rounded-lg  active:scale-95"
+                                type="button" onclick="openNotificationPage()">Book Now
+                            </button></div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <section class="py-20" id="getting-hired-10x">
+        <div class="px-4 py-0 my-0 mx-auto w-[1320px]">
+            <div class="w-[750px]  my-0 mx-auto flex flex-col text-center"> <img src="images/curve.png" alt=""
+                    class="select-none text-[#0b1331]">
+                <h2 class="text-4xl font-semibold">Ready to improve your chances of getting hired 10X?</h2>
+                <div class="flex justify-center mt-8">
+                    <button href="#" onclick="openBookInterviewPage()"
+                        class="rounded-lg py-2 px-10 text-white font-semibold text-lg text-[#0009]  bg-[#ffbb00] flex space-x-3 active:scale-95 hover:bg-[#ffac00]">
+                        <span>Book your Mock Interview Now</span>
+                        <img src="images/bell.webp" alt="">
+                    </button>
+                </div>
+            </div>
+        </div>
+        </div>
+    </section>
+
+    <footer class=" select-none bg-[#0B1331] text-white ">
+        <div class="py-20">
+            <div class="bottomFooter px-4  py-0 my-0 mx-auto w-[1320px] flex justify-between   ">
+                <div class="w-[330px]"><img class="w-1/2 mix-blend" src="images/IQ-boost-mock1.png" alt="">
+                    <p class="my-12 text-sm">Online face-to-face mock interviews with experts help you train & prepare
+                        for
+                        job
+                        interviews in a no pressure, stress-free environment simulating a real job interview. Stay ahead
+                        of
+                        the competition with expert mentoring & feedback!</p>
+                    <div>
+                        <ul class=" flex items-end text-2xl space-x-5 social-media">
+                            <li><a href="#" target="_blank" title="Instagram"><i class="ri-instagram-line"></i></a></li>
+
+                            <li><a href="https://twitter.com/Ranjeet8081" target="_blank" title="Twitter"
+                                    rel="noopener"><i class="ri-twitter-x-line"></i></a></li>
+
+                            <li><a href="#" target="_blank" title="Telegram"><i class="ri-telegram-line"></i></a></li>
+
+                            <li><a href="#" target="_blank" title="Facebook"><i class="ri-facebook-circle-line"></i></a>
+                            </li>
+
+                            <li><a href="https://www.linkedin.com/in/ranjeet-vishwakarma-9390a2250/" target="_blank"
+                                    title="Linke-in" rel="noopener"><i class="ri-linkedin-box-line"></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div>
+                    <h4 class="text-xl font-semibold">IQ-Boost Mock Interview</h4>
+                    <ul class="mt-6 text-sm footer-second-col">
+                        <li class="my-3"><a href="#">Our Interviewers</a></li>
+                        <li class="my-3"><a href="#" onclick="openTestimonialsPage()">Customer Stories</a></li>
+                        <li class="my-3"><a href="#" onclick=" openBookInterviewPage()">Book your Slot</a></li>
+                        <li class="my-3"><a href="#">Self Practice</a></li>
+                        <li class="my-3"><a href="#">Support</a></li>
+                    </ul>
+
+                </div>
+                <div>
+                    <address>
+                        <h4 class="text-xl font-semibold">Contact Us</h4>
+                        <ul class="mt-6 text-sm  footer-third-col">
+                            <li class="my-3 font-semibold">Phone</li>
+                            <li class="my-3">+91 8081490641</li>
+                            <li class="my-3 font-semibold">Email Address</li>
+                            <li class="my-3">rv238502@gmail.com</li>
+                            <li class="my-3 hover:text-[#ffac00]"><a
+                                    href="mailto:shyamvishwakarma971@gmail.com?subject=I want to know more about this Mock Interview APP?">
+                                    Send a Message
+                                </a></li>
+                        </ul>
+                    </address>
+                </div>
+                <div>
+                    <h4 class="text-xl font-semibold">Others</h4>
+                    <ul class="mt-6 text-sm footer-fourth-col">
+                        <li class="my-3"><a href="#topbar">Back to Top</a></li>
+                        <li class="my-3"><a href="#">Privacy policy</a></li>
+                        <li class="my-3"><a href="#">Terms of Services</a></li>
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+        <div class=" bg-[#363e4b] text-[#c4c4c4]">
+            <div class=" w-[1320px] py-5 my-0 mx-auto flex justify-between text-xs">
+                <p>© 2024 IQ-Boost Mock Interview | Trademark of U&U Connoisseurs (I) Private Limited
+                </p>
+                <ul class="flex space-x-4 ">
+                    <li class="hover:text-[#ffac00]"><a href="#">Privacy Policy</a></li>
+                    <li class="hover:text-[#ffac00]"><a href="#">T & C</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="">
+            <div class=" w-[1320px] py-5 my-0 mx-auto text-center text-xs text-[#777e8e]">
+                <p title="Thanks for visiting my website   We'll wise your Happy Journey">CAREFULLY CRAFTED WITH <i
+                        class="ri-heart-fill "></i>
+                    BY
+                    HUMANS FOR HUMANS
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://www.gstatic.com/firebasejs/9.12.1/firebase-app-compat.js"></script>
+
+    <script src="https://www.gstatic.com/firebasejs/9.12.1/firebase-auth-compat.js"></script>
+
+    <script src="./script.js"></script>
+    <script src="./database.js" type="module"></script>
+
+</body>
+
+</html>

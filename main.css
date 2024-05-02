@@ -1,0 +1,143 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+
+body {
+    font-family: "GT Walsheim Pro", -apple-system, "BlinkMacSystemFont", "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+    font-size: 100%;
+}
+
+:root {
+    --primary-yellow: #ffac00;
+    --secondary-yellow: #ffbb00;
+    /* --secondary-yellow: #fecb00; */
+
+
+    --primary-green: #21a35d;
+    --secondary-green: #01b600;
+
+    --primary-grey: #777e8e;
+    --secondary-grey: #ececec;
+
+    --primary-error: #da4a54;
+    --secondary-error: #ff6864;
+
+    --white: #fffbf3;
+    --error: #dc3545;
+}
+
+::selection {
+    background: var(--primary-yellow);
+    color: var(--white);
+}
+
+.ri-check-fill {
+    color: green;
+    font-size: 23px !important;
+    margin-right: 4px;
+}
+
+.live {
+    border-radius: 0px 60px 60px 120px;
+}
+
+.animation {
+    animation-name: animate;
+    animation-duration: 80s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+
+@keyframes animate {
+    0% {
+        transform: translateX(105%);
+    }
+
+    100% {
+        transform: translateX(-300%);
+    }
+}
+
+.animation:hover {
+    animation-play-state: paused;
+}
+
+.animation div {
+    @apply py-20 px-16 text-xl antialiased rounded-xl shadow-md bg-[#f5deb3] border;
+}
+
+.mix-blend {
+    mix-blend-mode: exclusion;
+    border-radius: 4px;
+}
+
+.nav-ul li:hover {
+    @apply text-[#ffac00];
+}
+
+.footer-second-col li:hover {
+
+    @apply text-[#ffac00];
+}
+
+.footer-fourth-col li:hover {
+    @apply text-[#ffac00];
+}
+
+.social-media li:hover {
+    @apply text-[#ffac00] scale-105;
+}
+
+.footer-third-col li:hover:nth-child(even) {
+    @apply text-[#ffac00];
+}
+
+.activeVerifyBtn {
+    @apply bg-[#21a35d];
+}
+
+
+/* below code for tooltips */
+
+.tooltip {
+    position: relative;
+}
+
+.tooltip .tooltiptext {
+    visibility: hidden;
+    width: 350px;
+    background-color: #ffbb00;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px 3px;
+    position: absolute;
+    z-index: 1;
+    top: 100%;
+    /* right: 0%; */
+    left: 10%;
+    margin-left: -60px;
+}
+
+.tooltip .tooltiptext::after {
+    content: "";
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 8px;
+    border-style: solid;
+    border-color: transparent transparent #fecb00 transparent;
+}
+
+.tooltip:hover .tooltiptext {
+    visibility: visible;
+}
+
+
+/* 
+  <div class="tooltip">Hover over me
+  <span class="tooltiptext">Tooltip text</span>
+</div>
+ */
