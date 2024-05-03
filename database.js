@@ -16,11 +16,6 @@ const SignUpDataEmail = ref(database, "signUpData/Email");
 const SignUpDataPassword = ref(database, "signUpData/Password");
 const SignUpDataMobileNo = ref(database, "signUpData/MobileNo");
 
-// const SignUpDataFname = ref(SignUpData, "Fname");
-// const SignUpDataLname = ref(SignUpData, "Lname");
-// const SignUpDataEmail = ref(SignUpData, "Email");
-// const SignUpDataPassword = ref(SignUpData, "Password");
-// const SignUpDataMobileNo = ref(SignUpData, "MobileNo");
 
 // Adding SignUp Data into Database
 
@@ -33,20 +28,20 @@ StoreSignUpData.addEventListener("click", async function () {
     const password = document.getElementById("confirm_password").value;
     const mobileNum = document.getElementById("number").value;
 
-    var i = 0
-    while (i < 5) {
+    var j = 0
+    while (j < 5) {
         if (fname !== "" && lname !== "" && email !== "" && password !== "") {
-            if (createPassword === password && createPassword >=8) {
+            if (createPassword === password) {
                 if (mobileNum.length == 13) {
                     document.getElementById("error_during_sign_up").style.display = "none";
                     document.getElementById("invalid_mobile_number").style.display = "none";
                     document.getElementById("error_during_password_matching").style.display = "none";
                     push(SignUpDataFname, fname);
-
                     push(SignUpDataLname, lname);
                     push(SignUpDataEmail, email);
                     push(SignUpDataPassword, password);
                     push(SignUpDataMobileNo, mobileNum);
+
                     if (
                         document.getElementById("signup-get-otp").style.display = "none"
                     ) {
@@ -57,17 +52,20 @@ StoreSignUpData.addEventListener("click", async function () {
                         document.getElementById("notification-bar").style.display = "none";
                     }
                     // below code for sending OTP
-                    await firebase.auth().signInWithPhoneNumber(mobileNum, window.recaptchaVerifier).then(function (confirmationResult) {
+                    firebase.auth().signInWithPhoneNumber(mobileNum, window.recaptchaVerifier).then(function (confirmationResult) {
                         window.confirmationResult = confirmationResult;
                         // coderesult = confirmationResult;
                         console.log('OTP Sent');
+                        console.log(recaptchaVerifier);
                     }).catch(function (error) {
                         // error in sending OTP
                         alert(error.message);
+                        console.log(recaptchaVerifier);
+
                     });
+                    j = 6;
                     console.log("The data is added successfully");
 
-                    i = 6;
                 } else {
                     document.getElementById("error_during_sign_up").style.display = "none";
                     document.getElementById("invalid_mobile_number").style.display = "block";
@@ -84,10 +82,9 @@ StoreSignUpData.addEventListener("click", async function () {
             document.getElementById("error_during_sign_up").style.display = "block";
             document.getElementById("error_during_password_matching").style.display = "none";
         }
-        i++;
+        j++;
     }
 })
-
 // Below code for sending OTP on your Mobile number
 
 const firebaseConfig = {
@@ -194,11 +191,11 @@ onValue(SignUpData, function (SignUpDatafromDatabse) {
             const SignInPassword = document.getElementById("signInPassword").value;
             console.log(SignInMail + " " + SignInPassword);
             console.log(newArrayofEmail.length);
-            for(let i=0;i<newArrayofEmail.length;i++){
-                if(SignInMail == newArrayofEmail[i] && SignInPassword == newArrayofPassword[i]){
+            for (let i = 0; i < newArrayofEmail.length; i++) {
+                if (SignInMail == newArrayofEmail[i] && SignInPassword == newArrayofPassword[i]) {
                     console.log("Email already Exists");
                 }
-                else{
+                else {
                     document.getElementById("Invalid_mail_or_password").style.display = "block";
                 }
             }
